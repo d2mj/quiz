@@ -1,0 +1,108 @@
+.main-section {
+	font-size: 2rem;
+	margin: 0 50px;
+	position: relative;
+	height: 94vh;
+
+	.que-no {
+		font-size: 1.3rem;
+	}
+
+	.next-btn {
+		padding: 5px;
+    	border-radius: 4px;
+		width: 50px;
+		&:disabled {
+			cursor: not-allowed;
+		}
+	}
+}
+
+.ans-section {
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	
+	bottom: 25px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+}
+
+.container {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	font-size: 3rem;
+	height: 50px;
+    width: 60px;
+	border: 1px solid #fff;
+    margin: 2px;
+	/* Hide the browser's default checkbox */
+	& input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	/* On mouse-over, add a grey background color */
+	// &:hover input ~ .checkmark {
+	// 	background-color: darkorange;
+	// }
+
+	/* When the checkbox is checked, add a blue background */
+	& input:checked ~ .checkmark {
+		background-color: darkorange;
+	}
+
+	/* Show the checkmark when checked */
+	& input:checked ~ .checkmark:after {
+		display: block;
+	}
+
+	/* Create a custom checkbox */
+	.checkmark {
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: inherit;
+		width: inherit;
+		background-color: transparent;
+
+		/* Create the checkmark/indicator (hidden when not checked) */
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+	}
+}
+
+.score-section {
+	height: 100%;
+	background-color: #fff;
+	color: #000;
+	font-size: 1.3rem;
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th, td {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.total-score {
+		font-size: 3rem;
+		padding: 30px;
+	}
+}
